@@ -41,12 +41,12 @@ export default class App extends React.Component {
 
   render() {
     return (
-      <>
+      <div className='container'>
         <div>
-          <h2>Phonebook</h2>
+          <h2 className='title'>Phonebook</h2>
           <Form onSubmit={this.getFormData} />
         </div>
-        <h2>Contacts</h2>
+        <h2 className='title'>Contacts</h2>
         <Filter
           stateFilter={this.state.filter}
           onChangeFilter={this.onChangeFilter}
@@ -55,7 +55,7 @@ export default class App extends React.Component {
           contacts={this.stateFilter()}
           onContactDel={this.onContactDel}
         />
-      </>
+      </div>
     );
   }
 }

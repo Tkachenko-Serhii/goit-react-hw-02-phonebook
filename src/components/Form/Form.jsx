@@ -1,5 +1,5 @@
 import React from "react";
-
+import s from "./Form.module.css";
 export default class Form extends React.Component {
   state = {
     name: "",
@@ -20,9 +20,9 @@ export default class Form extends React.Component {
 
   render() {
     return (
-      <form id='form' onSubmit={this.formSubmit}>
-        <label htmlFor=''>
-          <span>Name</span>
+      <form id='form' onSubmit={this.formSubmit} className={s.form}>
+        <label className={s.label}>
+          <span className={s.text}>Name</span>
           <input
             type='text'
             name='name'
@@ -30,10 +30,11 @@ export default class Form extends React.Component {
             title="Имя может состоять только из букв, апострофа, тире и пробелов. Например Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan и т. п."
             required
             onChange={this.inputChange}
+            className={s.input}
           />
         </label>
-        <label htmlFor=''>
-          <span>Number</span>
+        <label className={s.label}>
+          <span className={s.text}>Number</span>
           <input
             type='tel'
             name='number'
@@ -41,9 +42,12 @@ export default class Form extends React.Component {
             title='Номер телефона должен состоять цифр и может содержать пробелы, тире, круглые скобки и может начинаться с +'
             required
             onChange={this.inputChange}
+            className={s.input}
           />
         </label>
-        <button type='submit'>Add contact</button>
+        <button type='submit' className={s.button}>
+          Add contact
+        </button>
       </form>
     );
   }
