@@ -22,7 +22,9 @@ export default class App extends React.Component {
     }
 
     const contact = { name, number, id: shortId.generate() };
-    this.setState({ contacts: [contact, ...this.state.contacts] });
+    this.setState((prevState) => ({
+      contacts: [contact, ...prevState.contacts],
+    }));
   };
 
   stateFilter = () =>
@@ -42,7 +44,7 @@ export default class App extends React.Component {
   render() {
     return (
       <div className='container'>
-        <div>
+        <div className='addForm'>
           <h2 className='title'>Phonebook</h2>
           <Form onSubmit={this.getFormData} />
         </div>

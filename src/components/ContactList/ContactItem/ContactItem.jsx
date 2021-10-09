@@ -1,12 +1,17 @@
 import PropTypes from "prop-types";
+import s from "./ContactItem.module.css";
 
 export default function ContactItem({ contact, onContactDel }) {
   return (
-    <li>
-      <p>
+    <li className={s.item}>
+      <p className={s.contact}>
         {contact.name}: {contact.number}
       </p>
-      <button onClick={(e) => onContactDel(e.target.id)} id={contact.id}>
+      <button
+        className={s.button}
+        onClick={(e) => onContactDel(e.target.id)}
+        id={contact.id}
+      >
         Delete
       </button>
     </li>
