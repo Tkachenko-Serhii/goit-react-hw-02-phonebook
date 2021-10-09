@@ -22,8 +22,8 @@ export default class App extends React.Component {
     }
 
     const contact = { name, number, id: shortId.generate() };
-    this.setState((prevState) => ({
-      contacts: [contact, ...prevState.contacts],
+    this.setState(({ contacts }) => ({
+      contacts: [contact, ...contacts],
     }));
   };
 
