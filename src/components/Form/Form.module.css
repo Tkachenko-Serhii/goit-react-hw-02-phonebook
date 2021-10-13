@@ -1,7 +1,6 @@
 .label {
   display: flex;
   margin-bottom: 10px;
-  align-items: center;
 }
 .text {
   min-width: 60px;
@@ -12,15 +11,10 @@
   background-color: blueviolet;
   border: none;
   border-radius: 4px;
-  min-height: 30px;
-  min-width: 98px;
+  min-height: 25px;
 }
 
 .button:hover {
   background-color: brown;
   color: aliceblue;
-}
-
-.input {
-  height: 30px;
 }
